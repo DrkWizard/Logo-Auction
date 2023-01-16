@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background:#FAF9F6;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 250px;
+  height: 250px;
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.flip-card-back a:link, a:visited
+{
+  color: white;
+}
+
+.listing-section{
+  width: 100%;
+  float: left;
+  padding: 1%;
+  border-bottom: 0.01em solid #dddbdb;
+}
+
+.product {
+  float: left;
+  width: 261px;
+  border-radius: 2%;
+  margin: 10px;
+}
+
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav p {
+  padding: 0px 2px 0px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: Black;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  padding: 0px 10px;
+}
+</style>
+</head>
+<body>
+<script>
+    setTimeout(function reload() {location.reload()}, 60000)
+</script>
+  <div class="sidenav">
+    <p>Hi! {{u_id}}</p>
+    <a href="{% url 'edit_profile' %}">Profile</a>
+    <a href="{% url 'mybids' %}">Bids</a>
+    <a href="{% url 'mylogo' %}">My Logos</a>
+    <a href="#contact">Wallet</a>
+    <a href="{% url 'logout' %}">Logout</a>
+  </div>
+  <div class="main">
+    <h1>Active Logos for Auction</h1>
+    <h3>Hover over the logo below for information:</h3>
+    {% include 'message.html' %}
+    <div class="listing-section">
+      {% for i in logos %}
+      <div class="product">
+        <div class="flip-card">
+          <div class="flip-card-inner">
+            <div class="flip-card-front">
+              <img src="/media/{{i.Image}}" alt="Avatar" style="width:250px;height:250px;">
+            </div>
+          <div class="flip-card-back">
+            <h3>Title: {{i.Title}}</h3>
+            <form action="{% url 'view' %}" method="POST">
+              {% csrf_token %}
+              <p><button type="submit" name="view" value="{{i.Title}}">View</button></p>
+            </form>
+          </div>
+        </div>
+      </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</body>
+</html>

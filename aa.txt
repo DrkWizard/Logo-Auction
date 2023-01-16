@@ -1,0 +1,10 @@
+My Bids page logic????
+
+handling of wallet 
+
+watermarks on images(optional)
+-no watermarks if logo exists in album of user
+
+
+password protection using mapping(optional)
+

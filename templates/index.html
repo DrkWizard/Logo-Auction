@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+   <head>
+      <!-- basic -->
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!-- mobile metas -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+      <!-- site metas -->
+      <title>Logo Wars</title>
+      <meta name="keywords" content="">
+      <meta name="description" content="">
+      <meta name="author" content="">
+      <!-- bootstrap css -->
+      <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+      <!-- style css -->
+      <link rel="stylesheet" href="{% static 'css/style.css' %}">
+      <!-- Responsive-->
+      <link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+      <!-- fevicon -->
+      <link rel="icon" href="{% static 'images/fevicon.png' %}" type="image/gif" />
+      <!-- Scrollbar Custom CSS -->
+      <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+      <!-- Tweaks for older IEs-->
+      <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.css" media="screen">
+      <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script><![endif]-->
+   </head>
+   <!-- body -->
+   <body class="main-layout">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="{% static 'images/loading.gif' %}" alt="#" /></div>
+      </div>
+      <!-- end loader -->
+      <!-- header -->
+      <header>
+         <!-- header inner -->
+         <div class="header-top">
+            <div class="header">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-xl-3 col-lg-3 col-md-3 col-sm-3 col logo_section">
+                        <div class="full">
+                           <div class="center-desk">
+                              <div class="logo">
+                                 <a href="index.html"><img src="{% static 'images/logo.png' %}" alt="#"/></a>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9">
+                        <div class="menu-area">
+                           <div class="limit-box">
+                              <nav class="main-menu">
+                                 <ul class="menu-area-main">
+                                    <li class="active"> <a href="">Home</a> </li>
+                                    <li> <a href="#jewellery">About Us</a> </li>
+                                    <li> <a href="#contact">Contact</a> </li>
+                                 </ul>
+                              </nav>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <!-- end header inner -->
+            <!-- end header -->
+            <section class="slider_section">
+               <div class="banner_main">
+                  <div class="container">
+                     <div class="row d_flex">
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 ">
+                           <div class="text-bg">
+                              <h1>Logo Wars</h1>
+                              <span>If you can dream it, we can design it !! <br> 
+                              <a href="login">Login</a>
+                                 <a href="register">Get Started</a></span>
+                              {% include 'message.html' %}
+                           </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                           <div class="text-img">
+                              <figure><img src="{% static 'images/img.png' %}" align="right" /></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+         
+         </section>
+         
+         </div>
+      </header>
+      <!-- Best  -->
+      <div id="jewellery" class="Best">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>About Us</h2>
+                     <p> Hi there. We’re Logo Wars, the global auction platform that makes it easy for clients 
+                        and designers to work together online. Our developer network,verified and secured has broght
+                        more than thousands of creative logo designs to life of thousands of genius  entrepreneurs, savvy business owners and brands with big ideas.</p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="best_main">
+                     <div class="row d_flex">
+                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                           <div class="best_text">
+                              <p>We believe in people helping people create their own success.
+                              <br>Our design network has a ton of talent . Our clients are smart, passionate and full of great ideas. And the logo wars team has spent more than a decade building a world-class platform to enable remote creative collaboration. It’s all of these people working together that makes the magic happen.
+                              </p>
+                            <a href="login">Login</a>
+                           </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                           <div class="best_img">
+                              <figure><img src="{% static 'images/beimg.png' %}"></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="best_main">
+                     <div class="row d_flex">
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                           <div class="best_img croos_rt">
+                              
+                              <figure><img src="{% static 'images/beimg2.png' %}"></figure>
+                           </div>
+                        </div>
+                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                           <div class="best_text flot_left">
+                              <p>We believe that design has no boders.
+                              <br> Having offices and colleagues all around the world is a pretty sweet deal, 
+                                 but we think it’s even more amazing that any designer can earn a living from what they love
+                                 doing.</p>
+                              <a href="login">Login</a>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="best_main pa_bot">
+                     <div class="row d_flex">
+                        <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                           <div class="best_text">
+                              <p>We believe the journey should be fun.
+                              <br>We believe in the serious power of great design,creativity and play go hand in hand: the journey should always feel like a great</p>
+                              <a href="login">Login</a>
+                           </div>
+                        </div>
+                        <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                           <div class="best_img d_none">
+                              
+                              <figure><img src="{% static 'images/beimg3.png' %}"></figure>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end Best -->
+      <!-- contact -->
+      <div id="contact" class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                     <h2>Request a  call back</h2>
+                     <p> Average players want to be left alone. Good players want to be coached. Great players want to be told the truth.
+                     <br>Feedback is the breakfast of champions.
+                     </p>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-xl-5 col-lg-5 col-md-5 col-sm-12">
+                  <div class="contact">
+                     <form>
+                        <div class="row">
+                           <div class="col-sm-12">
+                              <input class="contactus" placeholder="Name" type="text" name="Name">
+                           </div>
+                           <div class="col-sm-12">
+                              <input class="contactus" placeholder="Phone Number" type="text" name="Phone Number">
+                           </div>
+                           <div class="col-sm-12">
+                              <input class="contactus" placeholder="Email" type="text" name="Email">
+                           </div>
+                           <div class="col-sm-12">
+                              <textarea class="textarea" placeholder="Message" type="text" name="Message"></textarea>
+                           </div>
+                           <div class="col-sm-12">
+                              <button class="send">Send</button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+               <div class="col-xl-7 col-lg-7 col-md-7 col-sm-12">
+                  <div class="rable-box">
+                     <figure>
+                     <img src="{% static 'images/feed.png' %}" alt="#" />
+                     </figure>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- end contact -->
+      <!-- team -->
+      <div id="clients" class="clients ">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                  </div>
+               </div>
+            </div>
+
+      <!-- Javascript files-->
+      <script src="/static/js/jquery.min.js"></script>
+      <script src="/static/js/popper.min.js"></script>
+      <script src="/static/js/bootstrap.bundle.min.js"></script>
+      <script src="/static/js/jquery-3.0.0.min.js"></script>
+      <script src="/static/js/plugin.js"></script>
+      <!-- sidebar -->
+      <script src="/static/js/jquery.mCustomScrollbar.concat.min.js"></script>
+      <script src="/static/js/custom.js"></script>
+      <script src="https:cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.5/jquery.fancybox.min.js"></script>
+    
+   </body>
+</html>

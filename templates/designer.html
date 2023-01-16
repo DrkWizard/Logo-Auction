@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-family: arial;
+}
+
+.product {
+  float: left;
+  width: 261px;
+  border-radius: 2%;
+  margin: 10px;
+}
+.card button {
+  border: none;
+  outline: 0;
+  padding: 12px;
+  color: white;
+  background-color: #000;
+  text-align: center;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+}
+
+.card button:hover {
+  opacity: 0.7;
+}
+.listing-section{
+  width: 100%;
+  float: left;
+  padding: 1%;
+  border-bottom: 0.01em solid #dddbdb;
+}
+.product {
+  float: left;
+  width: 261px;
+  border-radius: 2%;
+  margin: 10px;
+}
+.sidenav {
+  width: 130px;
+  position: fixed;
+  z-index: 1;
+  top: 20px;
+  left: 10px;
+  background: #eee;
+  overflow-x: hidden;
+  padding: 8px 0;
+}
+
+.sidenav a {
+  padding: 6px 8px 6px 16px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #2196F3;
+  display: block;
+}
+
+.sidenav p {
+  padding: 0px 2px 0px 16px;
+  text-decoration: none;
+  font-size: 15px;
+  color: Black;
+  display: block;
+}
+
+.sidenav a:hover {
+  color: #064579;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  padding: 0px 10px;
+}
+</style>
+</head>
+<body>
+
+	<div class="sidenav">
+    	<a href="{% url 'loginsuccess' %}">Home</a>
+        <a href="{% url 'upload' %}">Upload</a>
+    	<a href="{% url 'logout' %}">Logout</a>
+    </div>
+  	<div class="main">
+		<h2 >My Logo's</h2>
+		<p> No. of Logos: {{n}}</p>
+		<div class="listing-section">
+			{% include 'message.html' %}
+			{% for i in album %}
+			<div class="card">
+ 				<div class="product">
+  					<img src="/media/{{i.Image}}" style="width:250px;height:250px;">
+  					<h2>{{i.Title}}</h2>
+  					<p>{{i.Description}}</p>
+					<form action="{% url 'mylogo' %}" method="POST">
+  						{% csrf_token %}
+						<p><button type="submit" name="auction" value="{{i.Title}}">Auction it!</button></p>
+					</form>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+</body>
+</html>

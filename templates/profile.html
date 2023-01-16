@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+{% load static %}
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container bootstrap snippets bootdey">
+        <h1 class="text-primary"><span class="glyphicon glyphicon-user"></span>Edit Profile</h1>
+       <a class="glyphicon glyphicon-user" href="{% url 'loginsuccess'%}">CANCEL</a>
+        <hr>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3">
+            </div>
+
+            <!-- edit form column -->
+            <div class="col-md-9 personal-info">
+                <div class="alert alert-info alert-dismissable">
+                    <a class="panel-close close" data-dismiss="alert">×</a>
+                    <i class="fa fa-coffee"></i>
+                    <strong>Note:</strong>. Username and email are non editable.
+                </div>
+                <h3>Personal info</h3>
+
+
+                <form action="{% url 'edit_profile' %}" method="post" class="enter" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {% for i in data %}
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Username:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" name="username" value="{{i.username}}" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Email:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" value="{{i.Email}}" readonly>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Full name:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" name="name" value="{{i.Full_Name}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Contact:</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" name="contact" value="{{i.contact}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-lg-3 control-label">Account Type</label>
+                        <div class="col-lg-8">
+                            <input class="form-control" type="text" name="AccountType" value="{{i.Account_type}}" readonly>
+                        </div>
+                    </div>
+                    <input type="submit" value="Save">
+                    {% endfor %}
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
