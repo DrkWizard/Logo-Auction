@@ -211,7 +211,7 @@ def mybids(request):
     check = request.session['account']
     if check:
         u_id = request.session['username']
-        Bids.objects.(Bidder=u_id)
+        Bids.objects.filter(Bidder=u_id)
         title = Bids.Title
         if Logo_Bid_details.objects.filter(Title=title).exists():
             bids = Bids.objects.filter(Bidder=u_id)
